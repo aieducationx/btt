@@ -1,0 +1,48 @@
+BILIM, TEKNOLOJI VE TOPLUM — VIDEO DOSYA ADLARI
+==========================================================
+
+NotebookLM'den indirdiginiz videoyu asagidaki adla kaydedip
+bu klasore atin. Uzanti .mp4 olmali.
+
+--- 1. BOLUM · Bilgi, Teknoloji ve Toplum ---
+  B01.mp4   1.1    Teknoloji Toplumu Değiştirir mi?
+  B02.mp4   1.2    İlk Uygarlıklarda Bilim ve Teknoloji
+  B03.mp4   1.3    Antik Yunan, İslam Dünyası ve Bilgi Aktarımı
+
+--- 2. BOLUM · Bilimsel Devrim ve Yeni Dünya Görüşü ---
+  B04.mp4   2.1    Rönesans ve Bilimsel Devrim
+  B05.mp4   2.2    Kopernik, Galileo, Newton ve Modern Bilim
+
+--- 3. BOLUM · Sanayi, Enerji, Ulaşım ---
+  B06.mp4   3.1    Sanayi Devrimi
+  B07.mp4   3.2    Elektrik, Kentleşme ve Modern Yaşam
+  B08.mp4   3.3    Ulaşım ve İletişim Devrimleri
+
+--- 4. BOLUM · Bilim, Savaş ve Sorumluluk ---
+  B09.mp4   4.1    Darwin, Pasteur, Curie: Bilim ve Modern Toplum
+  B10.mp4   4.2    20. Yüzyıl: Savaş, Atom ve Big Science
+
+--- 5. BOLUM · Dijital Toplum, Yapay Zekâ ve Gelecek ---
+  B11.mp4   5.1    Bilgisayar ve İnternet Devrimi
+  B12.mp4   5.2    Sosyal Medya, Algoritmalar ve Gözetim
+  B13.mp4   5.3    Yapay Zekâ ve Toplum
+  B14.mp4   5.4    Geleceğin Bilim ve Teknolojisi
+
+--- 6. BOLUM · AI-CompEU · Avrupa Birliği Katmanı ---
+  M01.mp4   6.1    AB Nedir? Tarih, Kurumlar ve Değerler
+  M02.mp4   6.2    AB'nin Bilim ve Teknoloji Politikası
+  M03.mp4   6.3    Avrupa Birliği Yapay Zekâ Yasası
+  M04.mp4   6.4    Kişisel Veri Kime Aittir?
+  M05.mp4   6.5    İyi Materyal Kimin Ölçütüne Göre İyidir?
+  M06.mp4   6.6    Bir Kıta Kendi Enerjisini Yeniden Kurabilir mi?
+  M07.mp4   6.7    Platformların Anayasası
+  M08.mp4   6.8    Yeniliği Kim Yönlendirir?
+
+NOTLAR
+------
+* GitHub'da tarayiciyla yuklenebilecek en buyuk dosya 25 MB'dir.
+  Daha buyukse once sikistirin (bkz. 06_Video_Kilavuzu.pdf).
+* Yuklemedikleriniz sorun degil; o dersler "video henuz eklenmedi"
+  kutusunu gosterir, yarisini sonra ekleyebilirsiniz.
+* Dosya adlarini degistirirseniz videolar.js icindeki adlari da
+  ayni sekilde degistirin.
