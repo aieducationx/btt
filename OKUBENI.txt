@@ -1,0 +1,15 @@
+Ders videolarini bu klasore yukleyin.
+
+Dosya adlari, videolar.js dosyasinda yazdiginiz adlarla birebir ayni olmali.
+Onerilen adlandirma:
+
+   B01.mp4 ... B14.mp4   (Bilim, Teknoloji ve Toplum dersleri)
+   M01.mp4 ... M08.mp4   (Avrupa Birligi modulleri)
+
+Hangi numaranin hangi derse ait oldugu videolar.js icinde yorum olarak yazili.
+
+ONEMLI: GitHub'da tarayiciyla yuklenebilecek en buyuk dosya 25 MB'dir.
+Daha buyuk videolari once sikistirin, ya da YouTube'a yukleyip adresini
+videolar.js icine yapistirin.
+
+Bu dosyayi silebilirsiniz.

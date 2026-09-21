@@ -11,7 +11,9 @@ her ders beş adım: **Oku · İzle · Değerlendirme · Görev · Üret ve Payl
 | Dosya | Ne |
 |---|---|
 | `index.html` | Sitenin giriş sayfası |
-| `ders/index.html` | Platformun tamamı — tek dosya, 1,3 MB, bağımlılıksız |
+| `ders.html` | Platformun tamamı — tek dosya, 1,3 MB, bağımlılıksız |
+| `videolar.js` | Ders videolarının bağlandığı yer (yerel dosya ya da YouTube adresi) |
+| `video/` | Yerel video dosyalarının klasörü |
 | `.nojekyll` | GitHub Pages'in dosyaları olduğu gibi yayımlaması için |
 | `LICENSE` | CC BY-NC-SA 4.0 |
 
