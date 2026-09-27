@@ -31,12 +31,12 @@ window.BTT_VIDEO = {
 
   dersler: {
     // ---- 1 · Bilgi, Teknoloji ve Toplum ----
-    "B01": "B01.mp4",                   // 1.1 · Teknoloji Toplumu Değiştirir mi?
-    "B02": "",                   // 1.2 · İlk Uygarlıklarda Bilim ve Teknoloji
-    "B03": "",                   // 1.3 · Antik Yunan, İslam Dünyası ve Bilgi Aktarımı
+    "B01": "https://youtu.be/krsSihPQhU4",                   // 1.1 · Teknoloji Toplumu Değiştirir mi?
+    "B02": "https://youtu.be/HsDcJT1ewl0",                   // 1.2 · İlk Uygarlıklarda Bilim ve Teknoloji
+    "B03": "https://youtu.be/hVO8p6dSjqU",                   // 1.3 · Antik Yunan, İslam Dünyası ve Bilgi Aktarımı
 
     // ---- 2 · Bilimsel Devrim ve Yeni Dünya Görüşü ----
-    "B04": "",                   // 2.1 · Rönesans ve Bilimsel Devrim
+    "B04": "https://youtu.be/rWN88M8Ge5k",                   // 2.1 · Rönesans ve Bilimsel Devrim
     "B05": "",                   // 2.2 · Kopernik, Galileo, Newton ve Modern Bilim
 
     // ---- 3 · Sanayi, Enerji, Ulaşım ----
