@@ -55,7 +55,7 @@ window.BTT_VIDEO = {
     "B14": "",                   // 5.4 · Geleceğin Bilim ve Teknolojisi
 
     // ---- 6 · AI-CompEU · Avrupa Birliği Katmanı ----
-    "M01": "M01.mp4",                   // 6.1 · AB Nedir? Tarih, Kurumlar ve Değerler
+    "M01": "https://youtu.be/lQrK9d5AFV4",                   // 6.1 · AB Nedir? Tarih, Kurumlar ve Değerler
     "M02": "",                   // 6.2 · AB'nin Bilim ve Teknoloji Politikası
     "M03": "",                   // 6.3 · Avrupa Birliği Yapay Zekâ Yasası
     "M04": "",                   // 6.4 · Kişisel Veri Kime Aittir?
