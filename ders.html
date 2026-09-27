@@ -1140,6 +1140,42 @@ class Component extends DCLogic {
   }
   pdfAc = () => this.setState({ pdfAcik: !this.state.pdfAcik });
 
+  // Ders verisindeki video metni yapım için yazılmış bir brieftir
+  // ("… şu dört noktayı anlatmalı"). Öğrenciye bunu değil, videonun
+  // içindekileri gösteririz: maddeler + kapanış sorusu.
+  videoMaddeler(metin) {
+    const t = String(metin || '').trim();
+    if (!t) return { maddeler: [], kapanis: '' };
+    let kapanis = '';
+    let govde = t;
+    const k = /Kapanış sorusu:\s*/.exec(govde);
+    if (k) { kapanis = govde.slice(k.index + k[0].length).trim(); govde = govde.slice(0, k.index); }
+    // yapım notları öğrenciyi ilgilendirmez
+    govde = govde.replace(/Kullanılacak[^.]*?anekdot[^]*$/i, '').trim();
+    // Madde imleri sırayla (1) (2) (3)… gelir. Yıl parantezlerini
+    // (1951 gibi) madde sanmamak için yalnızca beklenen sıradaki
+    // tek haneli numara kabul edilir.
+    const yer = [];
+    let beklenen = 1, ara = 0;
+    for (;;) {
+      const im = '(' + beklenen + ')';
+      const i = govde.indexOf(im, ara);
+      if (i < 0) break;
+      yer.push([i, im.length]);
+      ara = i + im.length; beklenen++;
+      if (beklenen > 9) break;
+    }
+    if (!yer.length) return { maddeler: govde ? [govde] : [], kapanis };
+    const maddeler = [];
+    for (let i = 0; i < yer.length; i++) {
+      const bas = yer[i][0] + yer[i][1];
+      const son = (i + 1 < yer.length) ? yer[i + 1][0] : govde.length;
+      let m = govde.slice(bas, son).replace(/^[\s;,.]+|[\s;,]+$/g, '').trim();
+      if (m.length > 8) maddeler.push(/[.!?»"”]$/.test(m) ? m : m + '.');
+    }
+    return { maddeler, kapanis: kapanis.replace(/^["“]+|["”]+$/g, '') };
+  }
+
   // ---------- adım adım ders ----------
   adimSec = (i) => { this.setState({ adim: Math.max(0, Math.min(4, i)) }); window.scrollTo(0, 0); };
   // Açılışta ilk tamamlanmamış adımdan başlar; öğrenci kaldığı yerden devam eder.
@@ -1734,6 +1770,10 @@ class Component extends DCLogic {
       v.videoYerel = !!(vk && vk.tur === 'yerel');
       v.videoYoutube = !!(vk && vk.tur === 'youtube');
       v.videoUrl = vk ? vk.url : '';
+      const vm = this.videoMaddeler(l.video);
+      v.videoMaddeleri = vm.maddeler.map(x => ({ v: x }));
+      v.videoIcerikVar = vm.maddeler.length > 0;
+      v.videoKapanis = vm.kapanis; v.videoKapanisVar = !!vm.kapanis;
       v.videoState = p.video ? 'İzlendi olarak işaretlendi' : 'Video bu derse henüz eklenmedi';
       v.videoBtn = p.video ? 'İşareti kaldır' : 'İzledim olarak işaretle';
       v.markVideo = () => { if (p.video) { this.setStep('video', false); } else this.markVideo(); };
@@ -2389,8 +2429,23 @@ window.addEventListener('DOMContentLoaded', function () {
             </sc-if>
           </div>
           <div>
-            <div class="kick" style="color:oklch(0.495 0.1708 32);margin-bottom:10px">Video özeti</div>
-            <div style="font-size:14px;line-height:1.7;color:oklch(0.28 0.0067 265)">{{les.video}}</div>
+            <sc-if value="{{videoIcerikVar}}" hint-placeholder-val="{{ true }}">
+              <div class="kick" style="color:oklch(0.495 0.1708 32);margin-bottom:12px">Videoda neler var?</div>
+              <div style="display:flex;flex-direction:column;gap:11px">
+                <sc-for list="{{videoMaddeleri}}" as="m" hint-placeholder-count="4">
+                  <div style="display:flex;gap:11px;align-items:flex-start">
+                    <span style="width:6px;height:6px;background:oklch(0.72 0.0972 70);transform:rotate(45deg);margin-top:8px;flex:none"></span>
+                    <span style="font-size:13.8px;line-height:1.64;color:oklch(0.3 0.0067 265)">{{m.v}}</span>
+                  </div>
+                </sc-for>
+              </div>
+            </sc-if>
+            <sc-if value="{{videoKapanisVar}}" hint-placeholder-val="{{ true }}">
+              <div style="margin-top:16px;border-left:2px solid oklch(0.72 0.0972 70);padding-left:14px">
+                <div style="font-size:11px;letter-spacing:0.18em;text-transform:uppercase;font-weight:700;color:oklch(0.54 0.0076 265);margin-bottom:6px">Videonun bıraktığı soru</div>
+                <div style="font-family:'Spectral',Georgia,serif;font-style:italic;font-size:14.6px;line-height:1.6;color:oklch(0.3 0.0067 265)">{{videoKapanis}}</div>
+              </div>
+            </sc-if>
             <button onClick="{{markVideo}}" class="btns" style="margin-top:18px">{{videoBtn}}</button>
           </div>
         </div>
